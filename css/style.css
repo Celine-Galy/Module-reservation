@@ -3,7 +3,6 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: #CF2A4A;
-	margin-bottom: 5%;
 }
 .form-control {
     border:none;
@@ -22,17 +21,3 @@
 	height: 80%;
 }
 
-=======
-    border: 0;
-}
-header img{
-	width: 50vw;
-	height: 20vh;
-	margin-top: 5%;
-	margin-bottom: 3%;;
-	text-align: left;
-}
-.btn btn-outline-primary {
-	color:  #CF2A4A;
-}
->>>>>>> 9716f4640b21d88642ec36373f0f08cf1cf0f874
