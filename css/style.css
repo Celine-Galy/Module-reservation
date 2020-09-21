@@ -7,3 +7,10 @@
 .form-control {
     border: 0;
 }
+header img{
+	width: 50vw;
+	height: 20vh;
+	margin-top: 5%;
+	margin-bottom: 3%;;
+	text-align: left;
+}
