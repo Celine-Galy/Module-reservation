@@ -19,6 +19,7 @@
 
 }
 #image1{
+	margin-top: 5%;
 	width: 40vw;
 	height: 26vh;
 }
@@ -28,3 +29,6 @@
 	color: #CF2A4A;
 }
 
+i{
+	color: #000000;
+}
