@@ -454,20 +454,80 @@ $( "#arrivee" ).autocomplete({
     });
   } );
 
-$( function() {
+  $( function() {
 $( "#submit" ).on( "click", function() {
     let depart = document.getElementById ('depart').value;
     let arrivee = document.getElementById('arrivee').value;
 
     if(depart===arrivee){
-  alert("La ville d'arrivée doit être différente")};
+  alert("La ville d'arrivée doit être différente")}
+  else{
+    window.open("http://localhost/Module-reservation/inscription.html");
+  }
 });
   } );
 
 //choix de la date
-var date = new Date();
-var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
-$('#from').datepicker({ 
-    minDate: today
-});
+
+$( function() {
+  var dateFormat = "mm/dd/yy",
+      from = $( "#fromDate" )
+      
+        .datepicker({
+          defaultDate: "+1w",
+          numberOfMonths: 1,
+          minDate: 0, 
+          selectOtherMonths: true,
+          altField: "#datepicker",
+            closeText: 'Fermer',
+            prevText: 'Précédent',
+            nextText: 'Suivant',
+
+            monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+            monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+            dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+            dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+            dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+            weekHeader: 'Sem.',
+           
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );   
+        }),
+ 
+        to = $("#toDate").datepicker({
+            defaultDate: "+1w",
+            numberOfMonths: 1,
+            minDate: 0,
+            selectOtherMonths: true,
+            closeText: 'Fermer',
+            prevText: 'Précédent',
+            nextText: 'Suivant',
+            monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+            monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+            dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+            dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+            dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+            weekHeader: 'Sem.',
+            dateFormat:'yy-mm-dd'
+        
+        })
+        .on( "change", function() {
+          from.datepicker( "option", "maxDate", getDate( this ) );
+        });
+        
+
+    function getDate( element ) {
+        
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
+  

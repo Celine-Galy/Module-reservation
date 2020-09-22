@@ -32,3 +32,18 @@
 i{
 	color: #000000;
 }
+
+.ui-datepicker{
+	background-color:white;
+	padding: 3px;	
+}
+.ui-datepicker select{
+	border: 1px solid black;
+}
+.ui-icon-circle-triangle-e{
+	margin: 43px;
+}
+.ui-datepicker-calendar{
+	width: 80%;
+	align-content: center;
+}
