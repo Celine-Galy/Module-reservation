@@ -2,11 +2,14 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -28,15 +31,20 @@
                         <i class="material-icons">flight_takeoff</i>
                         
                     </div>
+                    <div class="ui-widget">
                     <div class="form-group col-md-10">
-                        <input type="text" name="" class="form-control" id="inputEmail4" placeholder="Départ de..." required>
+                        <input type="text" name="" class="form-control" id="depart" placeholder="Départ de..." required>
+                    </div>
                     </div>
                     <div class="col-md-2">
                         <i class="material-icons">flight_land</i>
                     </div>
+                    <div class="ui-widget">
                     <div class="form-group col-md-10">
-                        <input type="text" name="" class="form-control" id="inputEmail4" placeholder="Arrivée à..." required>
+                        <input type="text" name="" class="form-control" id="arrivee" placeholder="Arrivée à..." required>
+                        </div>
                     </div>
+                </div>
                     <div class="col-md-2">
                         <i class="material-icons">event</i>
                     </div>
@@ -84,7 +92,7 @@
         <option value="10">10</option>
       </select>
     </div>
-        <button type="submit" class="btn btn-primary col-md-12">Rechercher</button>
+        <button id="submit" type="submit" class="btn btn-primary col-md-12">Rechercher</button>
 
     </div>
 </form>
@@ -93,6 +101,8 @@
 
  </div>
 </div>
+
+<script src="js/script.js"></script>
 </body>
 
 </html>
