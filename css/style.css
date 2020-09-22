@@ -14,10 +14,17 @@
 .btn{
 	background: #ffffff;
 	color: #CF2A4A;
+	border:none;
+	font-weight: bold;
 
 }
 #image1{
-	width: 40%;
-	height: 80%;
+	width: 40vw;
+	height: 26vh;
+}
+#tourist{
+	height: 50%;
+	width: 50%;
+	color: #CF2A4A;
 }
 
