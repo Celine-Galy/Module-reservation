@@ -1,3 +1,5 @@
+const CLEAR_LOCAL_STORAGE = false;
+
 //choix des aeroports
 var airports = ["Antwerp,Antwerp International Airport,ANR",
 "Brussels,Brussels Airport,BRU",
@@ -446,7 +448,6 @@ $( "#depart" ).autocomplete({
     });
   } );
 
-
 $( function() {
 
 $( "#arrivee" ).autocomplete({
@@ -462,16 +463,17 @@ $( "#submit" ).on( "click", function() {
     if(depart===arrivee){
   alert("La ville d'arrivée doit être différente")}
   else{
+    localStorage.setItem('depart', depart);
+    localStorage.setItem('arrivee', arrivee);
     window.open("http://localhost/Module-reservation/inscription.html");
   }
 });
   } );
-
 //choix de la date
 
 
 $( function() {
-  var dateFormat = "mm/dd/yy",
+var dateFormat = ("mm/dd/yy")
       from = $( "#fromDate" )
       
         .datepicker({
@@ -510,7 +512,7 @@ $( function() {
             dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
             dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
             weekHeader: 'Sem.',
-            dateFormat:'yy-mm-dd'
+
         
         })
         .on( "change", function() {
@@ -529,5 +531,15 @@ $( function() {
  
       return date;
     }
+   
   } );
   
+  let datedepart = document.getElementById ('fromDate').value;
+  let datearrivee = document.getElementById('toDate').value;
+  localStorage.setItem('fromDate', datedepart);
+  localStorage.setItem('toDate', datearrivee);
+
+  console.log(localStorage.datedepart)
+  console.log(localStorage.datearrivee)
+  console.log(localStorage.arrivee)
+  console.log(localStorage.depart)
