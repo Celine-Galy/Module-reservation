@@ -465,7 +465,7 @@ $( "#submit" ).on( "click", function() {
   else{
     localStorage.setItem('depart', depart);
     localStorage.setItem('arrivee', arrivee);
-    window.open("http://localhost/Module-reservation/inscription.html");
+
   }
 });
   } );

@@ -34,7 +34,7 @@
                     
                     <div class="form-group col-md-10">
                         <div class="ui-widget">
-                        <input type="text" name="" class="form-control" id="depart" placeholder="Départ de..." required>
+                        <input type="text" name="depart" class="form-control" id="depart" placeholder="Départ de..." required>
                     </div>
                     </div>
                     <div class="col-md-2">
@@ -43,7 +43,7 @@
                     
                     <div class="form-group col-md-10">
                         <div class="ui-widget">
-                        <input type="text" name="" class="form-control" id="arrivee" placeholder="Arrivée à..." required>
+                        <input type="text" name="ariver" class="form-control" id="arrivee" placeholder="Arrivée à..." required>
                         </div>
                     </div>
             
@@ -51,19 +51,19 @@
                         <i class="material-icons">event</i>
                     </div>
                     <div class="form-group col-md-4">
-                        <input id="fromDate" name="" class="form-control" id="inputEmail4" placeholder="Date de départ" required>
+                        <input id="fromDate" name="departDate" class="form-control" id="inputEmail4" placeholder="Date de départ" required>
                     </div>
                     <div class="col-md-2">
                         <i class="material-icons">event</i>
                     </div>
                     <div class="form-group col-md-4">
-                        <input id="toDate" name="" class="form-control" id="inputEmail4" placeholder="Date de retour" required>
+                        <input id="toDate" name="ariverDate" class="form-control" id="inputEmail4" placeholder="Date de retour" required>
                     </div>
                     <div class="col-md-2">
                         <img src="img/tourist.svg" id="tourist">
                     </div>
                     <div class="form-group col-md-5">
-                        <select name="" class="form-control" id="inputEmail4" placeholder="Nombre d'adultes" required>
+                        <select name="maj" class="form-control" id="inputEmail4" placeholder="Nombre d'adultes" required>
         <option>Nombre d'adultes</option>
         <option value="0">0</option>
         <option value="1">1</option>
@@ -79,7 +79,7 @@
       </select>
         </div>
     <div class="form-group col-md-5">
-    <select type="" name="" class="form-control" id="inputEmail4" placeholder="Nombre d'enfants">
+    <select type="" name="child" class="form-control" id="inputEmail4" placeholder="Nombre d'enfants">
         <option>Nombre d'enfants</option>
         <option value="0">0</option>
         <option value="1">1</option>
@@ -94,7 +94,7 @@
         <option value="10">10</option>
       </select>
     </div>
-        <button id="submit" type="submit" class="btn btn-primary col-md-12">Rechercher</button>
+        <button id="submit" type="submit" name="submit" class="btn btn-primary col-md-12">Rechercher</button>
 
     </div>
 </form>
@@ -105,5 +105,16 @@
 </div>
 <script src="js/script.js"></script>
 </body>
-
+<?php
+if(isset($_POST["submit"])){
+        $depart = $_POST["depart"];
+        $ariv = $_POST["ariver"];
+        $depDate = $_POST["departDate"];
+        $arivDate = $_POST["ariverDate"];
+        $adulte = $_POST["maj"];
+        $child = $_POST["child"];
+        $link ="<script>open('inscription.php?depart=$depart&ariv=$ariv&depDate=$depDate&arivDate=$arivDate&adulte=$adulte&child=$child')</script>";
+            echo $link;
+    }
+?>
 </html>
